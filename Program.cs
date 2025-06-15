@@ -12,9 +12,9 @@ class Program
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
             .Build();
 
-        string url = config["WeatherStationURL"];
+        string url = config["WeatherStationURL"]!;
 
-        var environment = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT");
+        string? environment = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT");
 
         if (environment == "Development")
         {
