@@ -1,4 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
+using ItixoTestWork;
+
+namespace ItixoTestWork;
 
 class Program
 {
@@ -27,7 +30,5 @@ class Program
         XmlDataLoader loader = new XmlDataLoader(url);
 
         string xml = await loader.Load();
-
-        Console.WriteLine(xml);
     }
 }

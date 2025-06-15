@@ -1,6 +1,8 @@
 using System.Threading.Tasks;
 using System.Net.Http;
 
+namespace ItixoTestWork;
+
 public class XmlDataLoader
 {
     private readonly HttpClient _client;
