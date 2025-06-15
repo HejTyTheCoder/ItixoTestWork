@@ -1,13 +1,24 @@
 {
   "version": 2,
-  "dgSpecHash": "rDmJPPBfUrs=",
+  "dgSpecHash": "71VieQF3Zw4=",
   "success": true,
   "projectFilePath": "C:\\Users\\HejTy\\Documents\\Programming\\ItixoTestWork\\ItixoTestWork.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\HejTy\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.14\\microsoft.netcore.app.ref.8.0.14.nupkg.sha512",
-    "C:\\Users\\HejTy\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.14\\microsoft.windowsdesktop.app.ref.8.0.14.nupkg.sha512",
+    "C:\\Users\\HejTy\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.6\\microsoft.extensions.configuration.9.0.6.nupkg.sha512",
+    "C:\\Users\\HejTy\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.6\\microsoft.extensions.configuration.abstractions.9.0.6.nupkg.sha512",
+    "C:\\Users\\HejTy\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\9.0.6\\microsoft.extensions.configuration.fileextensions.9.0.6.nupkg.sha512",
+    "C:\\Users\\HejTy\\.nuget\\packages\\microsoft.extensions.configuration.json\\9.0.6\\microsoft.extensions.configuration.json.9.0.6.nupkg.sha512",
+    "C:\\Users\\HejTy\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\9.0.6\\microsoft.extensions.fileproviders.abstractions.9.0.6.nupkg.sha512",
+    "C:\\Users\\HejTy\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\9.0.6\\microsoft.extensions.fileproviders.physical.9.0.6.nupkg.sha512",
+    "C:\\Users\\HejTy\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\9.0.6\\microsoft.extensions.filesystemglobbing.9.0.6.nupkg.sha512",
+    "C:\\Users\\HejTy\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.6\\microsoft.extensions.primitives.9.0.6.nupkg.sha512",
+    "C:\\Users\\HejTy\\.nuget\\packages\\system.io.pipelines\\9.0.6\\system.io.pipelines.9.0.6.nupkg.sha512",
+    "C:\\Users\\HejTy\\.nuget\\packages\\system.text.encodings.web\\9.0.6\\system.text.encodings.web.9.0.6.nupkg.sha512",
+    "C:\\Users\\HejTy\\.nuget\\packages\\system.text.json\\9.0.6\\system.text.json.9.0.6.nupkg.sha512",
     "C:\\Users\\HejTy\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.14\\microsoft.aspnetcore.app.ref.8.0.14.nupkg.sha512",
-    "C:\\Users\\HejTy\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.14\\microsoft.netcore.app.host.win-x64.8.0.14.nupkg.sha512"
+    "C:\\Users\\HejTy\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.14\\microsoft.netcore.app.host.win-x64.8.0.14.nupkg.sha512",
+    "C:\\Users\\HejTy\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.14\\microsoft.netcore.app.ref.8.0.14.nupkg.sha512",
+    "C:\\Users\\HejTy\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.14\\microsoft.windowsdesktop.app.ref.8.0.14.nupkg.sha512"
   ],
   "logs": []
 }
