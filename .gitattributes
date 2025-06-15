@@ -1,2 +1,10 @@
 # Auto detect text files and perform LF normalization
-* text=auto
+* text = auto
+
+# Treat C# files specially for diffing
+*.cs diff = csharp
+*.csproj text
+*.sln text
+*.md text
+*.json text
+*.xml text
