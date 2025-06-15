@@ -7,4 +7,15 @@ var config = new ConfigurationBuilder()
 
 string url = config["WeatherStationURL"];
 
+var environment = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT");
+
+if (environment == "Development")
+{
+    Console.WriteLine("Debug mode");
+}
+else
+{
+    Console.WriteLine("Production mode");
+}
+
 Console.WriteLine($"URL: {url}");
