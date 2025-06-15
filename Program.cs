@@ -1,4 +1,4 @@
-﻿using Microsoft.Extension.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 
 var config = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
