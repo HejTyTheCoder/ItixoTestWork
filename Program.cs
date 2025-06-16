@@ -25,10 +25,17 @@ class Program
             Console.WriteLine("Production mode");
         }
 
-        Console.WriteLine($"URL: {url}");
-
         XmlDataLoader loader = new XmlDataLoader(url);
 
-        string xml = await loader.Load();
+        string? xml = await loader.Load();
+
+        if (xml != null)
+        {
+            string json = XmlToJsonConverter.Convert(xml);
+        }
+        else
+        {
+            Console.WriteLine("No Xml returned.");
+        }
     }
 }

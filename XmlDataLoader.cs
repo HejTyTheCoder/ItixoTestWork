@@ -14,7 +14,7 @@ public class XmlDataLoader
         _url = url;
     }
 
-    public async Task<string> Load()
+    public async Task<string?> Load()
     {
         HttpResponseMessage response = await _client.GetAsync(_url);
 
@@ -25,7 +25,7 @@ public class XmlDataLoader
         }
         else
         {
-            return "Response wasn't successful.";
+            return null;
         }
     }
 }
