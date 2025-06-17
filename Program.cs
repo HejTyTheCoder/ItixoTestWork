@@ -25,17 +25,21 @@ class Program
             Console.WriteLine("Production mode");
         }
 
-        XmlDataLoader loader = new XmlDataLoader(url);
+        var dbManager = new DatabaseManager("db/weather.sqlite");
 
+        XmlDataLoader loader = new XmlDataLoader(url);
         string? xml = await loader.Load();
 
         if (xml != null)
         {
             string json = XmlToJsonConverter.Convert(xml);
+
+            dbManager.SaveJson(json);
         }
         else
         {
             Console.WriteLine("No Xml returned.");
+            dbManager.SaveUnavailableMessage();
         }
     }
 }
