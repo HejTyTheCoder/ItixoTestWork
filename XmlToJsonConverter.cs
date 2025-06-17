@@ -1,6 +1,8 @@
 using Newtonsoft.Json;
 using System.Xml;
 
+namespace ItixoTestWork;
+
 public static class XmlToJsonConverter
 {
     public static string Convert(string xml)
@@ -10,7 +12,7 @@ public static class XmlToJsonConverter
         doc.LoadXml(xml);
 
         string json = JsonConvert.SerializeXmlNode(doc, Newtonsoft.Json.Formatting.Indented);
-        
+
         return json;
     }
 }

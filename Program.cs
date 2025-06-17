@@ -12,8 +12,6 @@ class Program
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
             .Build();
 
-        string url = config["WeatherStationURL"]!;
-
         string? environment = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT");
 
         if (environment == "Development")
@@ -25,15 +23,14 @@ class Program
             Console.WriteLine("Production mode");
         }
 
-        var dbManager = new DatabaseManager("db/weather.sqlite");
-
-        XmlDataLoader loader = new XmlDataLoader(url);
+        var dbManager = new DatabaseManager(config["DatabasePath"]!);
+        var loader = new XmlDataLoader(config["WeatherStationURL"]!);
         string? xml = await loader.Load();
 
         if (xml != null)
         {
             string json = XmlToJsonConverter.Convert(xml);
-
+    
             dbManager.SaveJson(json);
         }
         else

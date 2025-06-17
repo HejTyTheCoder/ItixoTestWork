@@ -1,5 +1,7 @@
 using Microsoft.Data.Sqlite;
 
+namespace ItixoTestWork;
+
 public class DatabaseManager
 {
     private readonly string _connectionString;
