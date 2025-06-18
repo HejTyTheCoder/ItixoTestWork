@@ -2,6 +2,38 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "H.GeneratedIcons.System.Drawing/2.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "9.0.1"
+        },
+        "compile": {
+          "lib/net8.0/H.GeneratedIcons.System.Drawing.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/H.GeneratedIcons.System.Drawing.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "H.NotifyIcon/2.3.0": {
+        "type": "package",
+        "dependencies": {
+          "H.GeneratedIcons.System.Drawing": "2.3.0"
+        },
+        "compile": {
+          "lib/net8.0/H.NotifyIcon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/H.NotifyIcon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Data.Sqlite/9.0.6": {
         "type": "package",
         "dependencies": {
@@ -189,6 +221,28 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "Microsoft.Win32.SystemEvents/9.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -337,6 +391,31 @@
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "System.Drawing.Common/9.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "9.0.1"
+        },
+        "compile": {
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/System.Private.Windows.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/System.Private.Windows.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
       "System.IO.Pipelines/9.0.6": {
         "type": "package",
         "compile": {
@@ -407,6 +486,48 @@
     }
   },
   "libraries": {
+    "H.GeneratedIcons.System.Drawing/2.3.0": {
+      "sha512": "3iI+3gy0VJNfXpMCJTHDfqOtVPCp4oXz9jlphtnG3s3dWo/jx1y1N6vuFiKdbzKElztPE+W5nM+7KHBEEyr8zg==",
+      "type": "package",
+      "path": "h.generatedicons.system.drawing/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "h.generatedicons.system.drawing.2.3.0.nupkg.sha512",
+        "h.generatedicons.system.drawing.nuspec",
+        "lib/net462/H.GeneratedIcons.System.Drawing.dll",
+        "lib/net462/H.GeneratedIcons.System.Drawing.xml",
+        "lib/net8.0/H.GeneratedIcons.System.Drawing.dll",
+        "lib/net8.0/H.GeneratedIcons.System.Drawing.xml",
+        "lib/net9.0/H.GeneratedIcons.System.Drawing.dll",
+        "lib/net9.0/H.GeneratedIcons.System.Drawing.xml",
+        "lib/netstandard2.0/H.GeneratedIcons.System.Drawing.dll",
+        "lib/netstandard2.0/H.GeneratedIcons.System.Drawing.xml",
+        "nuget_icon.png"
+      ]
+    },
+    "H.NotifyIcon/2.3.0": {
+      "sha512": "nmxzTPfYzwusJkfTapccqvv2SDQr1cOpIXkPnPiFhmux3X79n+gWkoBuKyA2zyE86FFRVoKfc6TklK0RLCjnRw==",
+      "type": "package",
+      "path": "h.notifyicon/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "h.notifyicon.2.3.0.nupkg.sha512",
+        "h.notifyicon.nuspec",
+        "lib/net462/H.NotifyIcon.dll",
+        "lib/net462/H.NotifyIcon.xml",
+        "lib/net8.0/H.NotifyIcon.dll",
+        "lib/net8.0/H.NotifyIcon.xml",
+        "lib/net9.0/H.NotifyIcon.dll",
+        "lib/net9.0/H.NotifyIcon.xml",
+        "lib/netstandard2.0/H.NotifyIcon.dll",
+        "lib/netstandard2.0/H.NotifyIcon.xml",
+        "nuget_icon.png"
+      ]
+    },
     "Microsoft.Data.Sqlite/9.0.6": {
       "sha512": "JtLL15uSBqqkDs6mhRc4rUbNPaJJCgN+gGQfLs+paD600td6V6YGgOreXWWoIKdq2eyRipggSJnE/eM5PlxYVA==",
       "type": "package",
@@ -666,6 +787,38 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Win32.SystemEvents/9.0.1": {
+      "sha512": "OxjcwJqBW/5A1111+vL9d+5KYTvOzeCTJY9zHZ0kpQI4wX075p6L7inHPSYuf0MGakVjUvaShvw9e9pfbInU2Q==",
+      "type": "package",
+      "path": "microsoft.win32.systemevents/9.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Win32.SystemEvents.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Win32.SystemEvents.targets",
+        "lib/net462/Microsoft.Win32.SystemEvents.dll",
+        "lib/net462/Microsoft.Win32.SystemEvents.xml",
+        "lib/net8.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/net8.0/Microsoft.Win32.SystemEvents.xml",
+        "lib/net9.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/net9.0/Microsoft.Win32.SystemEvents.xml",
+        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
+        "microsoft.win32.systemevents.9.0.1.nupkg.sha512",
+        "microsoft.win32.systemevents.nuspec",
+        "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/net9.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/net9.0/Microsoft.Win32.SystemEvents.xml",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "Newtonsoft.Json/13.0.3": {
       "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
@@ -786,6 +939,48 @@
         "lib/netstandard2.0/SQLitePCLRaw.provider.e_sqlite3.dll",
         "sqlitepclraw.provider.e_sqlite3.2.1.10.nupkg.sha512",
         "sqlitepclraw.provider.e_sqlite3.nuspec"
+      ]
+    },
+    "System.Drawing.Common/9.0.1": {
+      "sha512": "TTPkCqSMyMaG8BXlBKYTTJFtLV0SvjjsvgUN598hYgHaX/5B7tdUc2JhQF9vwrYmlzxId+gwFnKYuxQ2XsSz2g==",
+      "type": "package",
+      "path": "system.drawing.common/9.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Drawing.Common.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Drawing.Common.targets",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net462/System.Drawing.Common.dll",
+        "lib/net462/System.Drawing.Common.pdb",
+        "lib/net462/System.Drawing.Common.xml",
+        "lib/net8.0/System.Drawing.Common.dll",
+        "lib/net8.0/System.Drawing.Common.pdb",
+        "lib/net8.0/System.Drawing.Common.xml",
+        "lib/net8.0/System.Private.Windows.Core.dll",
+        "lib/net8.0/System.Private.Windows.Core.xml",
+        "lib/net9.0/System.Drawing.Common.dll",
+        "lib/net9.0/System.Drawing.Common.pdb",
+        "lib/net9.0/System.Drawing.Common.xml",
+        "lib/net9.0/System.Private.Windows.Core.dll",
+        "lib/net9.0/System.Private.Windows.Core.xml",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.pdb",
+        "lib/netstandard2.0/System.Drawing.Common.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "system.drawing.common.9.0.1.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.IO.Pipelines/9.0.6": {
@@ -943,6 +1138,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "H.NotifyIcon >= 2.3.0",
       "Microsoft.Data.Sqlite >= 9.0.6",
       "Microsoft.Extensions.Configuration >= 9.0.6",
       "Microsoft.Extensions.Configuration.Json >= 9.0.6",
@@ -950,19 +1146,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Radim\\.nuget\\packages\\": {}
+    "C:\\Users\\HejTy\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Radim\\OneDrive - VŠB-TUO\\Plocha\\Programming\\dotNET\\ItixoTestWork\\ItixoTestWork.csproj",
+      "projectUniqueName": "C:\\Users\\HejTy\\Documents\\Programming\\ItixoTestWork\\ItixoTestWork.csproj",
       "projectName": "ItixoTestWork",
-      "projectPath": "C:\\Users\\Radim\\OneDrive - VŠB-TUO\\Plocha\\Programming\\dotNET\\ItixoTestWork\\ItixoTestWork.csproj",
-      "packagesPath": "C:\\Users\\Radim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Radim\\OneDrive - VŠB-TUO\\Plocha\\Programming\\dotNET\\ItixoTestWork\\obj\\",
+      "projectPath": "C:\\Users\\HejTy\\Documents\\Programming\\ItixoTestWork\\ItixoTestWork.csproj",
+      "packagesPath": "C:\\Users\\HejTy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HejTy\\Documents\\Programming\\ItixoTestWork\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Radim\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\HejTy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -985,12 +1186,17 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "H.NotifyIcon": {
+            "target": "Package",
+            "version": "[2.3.0, )"
+          },
           "Microsoft.Data.Sqlite": {
             "target": "Package",
             "version": "[9.0.6, )"
@@ -1019,12 +1225,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.14, 8.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.14, 8.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.14, 8.0.14]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.14, 8.0.14]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.411/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
