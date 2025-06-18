@@ -5,16 +5,25 @@ namespace ItixoTestWork;
 public class DatabaseManager
 {
     private readonly string _connectionString;
+    private readonly string _dbPath;
 
     public DatabaseManager(string dbPath)
     {
         _connectionString = $"Data Source={dbPath}";
+        _dbPath = dbPath;
 
         Init();
     }
 
     private void Init()
     {
+        string? dbDirectory = Path.GetDirectoryName(_dbPath);
+
+        if (!string.IsNullOrEmpty(dbDirectory) && !Directory.Exists(dbDirectory))
+        {
+            Directory.CreateDirectory(dbDirectory);
+        }
+
         using var connection = new SqliteConnection(_connectionString);
 
         connection.Open();
