@@ -5,6 +5,10 @@ namespace ItixoTestWork;
 
 class Program
 {
+    private static System.Timers.Timer? _timer;
+    private static DatabaseManager? _dbManager;
+    private static XmlDataLoader? _loader;
+
     static async Task Main()
     {
         var config = new ConfigurationBuilder()
@@ -16,27 +20,53 @@ class Program
 
         if (environment == "Development")
         {
-            Console.WriteLine("Debug mode");
-        }
-        else
-        {
-            Console.WriteLine("Production mode");
+            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Running in debug mode");
         }
 
-        var dbManager = new DatabaseManager(config["DatabasePath"]!);
-        var loader = new XmlDataLoader(config["WeatherStationURL"]!);
-        string? xml = await loader.Load();
+        _timer = new System.Timers.Timer(TimeSpan.FromSeconds(10).TotalMilliseconds); // Testing time
+        _timer.Elapsed += async (s, e) => await WeatherUpdate();
+        _timer.AutoReset = true;
 
-        if (xml != null)
+        _dbManager = new DatabaseManager(config["DatabasePath"]!);
+        _loader = new XmlDataLoader(config["WeatherStationURL"]!);
+
+        await WeatherUpdate();
+
+        _timer.Start();
+
+        while (true)
         {
-            string json = XmlToJsonConverter.Convert(xml);
-    
-            dbManager.SaveJson(json);
+            // Place for keyboard shortcuts (later)
         }
-        else
+    }
+
+    private static async Task WeatherUpdate()
+    {
+        Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Starting weather data update...");
+
+        try
         {
-            Console.WriteLine("No Xml returned.");
-            dbManager.SaveUnavailableMessage();
+            string? xml = await _loader!.Load();
+
+            if (xml != null)
+            {
+                string json = XmlToJsonConverter.Convert(xml);
+
+                _dbManager!.SaveJson(json);
+
+                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Data update completed.");
+            }
+            else
+            {
+                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] No XML returned.");
+                _dbManager!.SaveUnavailableMessage();
+            }
         }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] ERROR: {ex.Message}");
+        }
+
+        Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Next update in 1 hour.");
     }
 }
