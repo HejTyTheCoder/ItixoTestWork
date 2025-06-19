@@ -36,7 +36,30 @@ class Program
 
         while (true)
         {
-            // Place for keyboard shortcuts (later)
+            var key = Console.ReadKey(true).Key;
+
+            switch (key)
+            {
+                case ConsoleKey.Q:
+                    Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Manual shutdown requested.");
+                    _timer.Stop();
+                    await WeatherUpdate();
+                    await Task.Delay(3000);
+                    Environment.Exit(0);
+                    break;
+
+                case ConsoleKey.L:
+                    Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Showing last weather record in database...");
+                    Console.WriteLine(_dbManager.GetLastJson());
+                    break;
+
+                case ConsoleKey.H:
+                    Console.WriteLine("\nAvailable commands:");
+                    Console.WriteLine("  [Q] - Quit and save one last weather record");
+                    Console.WriteLine("  [L] - Show latest weather record (JSON)");
+                    Console.WriteLine("  [H] - Show this help menu\n");
+                    break;
+            }
         }
     }
 

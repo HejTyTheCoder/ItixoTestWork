@@ -64,4 +64,27 @@ public class DatabaseManager
     {
         SaveJson("Weather station was not available.");
     }
+
+    public string GetLastJson()
+    {
+        using var connection = new SqliteConnection(_connectionString);
+
+        connection.Open();
+
+        var command = connection.CreateCommand();
+        command.CommandText =
+        @"
+        SELECT Json 
+        FROM WeatherJson 
+        ORDER BY Timestamp DESC 
+        LIMIT 1
+        ";
+
+        var json = command.ExecuteScalar() as string;
+
+        if (json == null)
+            return "No records found.";
+
+        return json;
+    }
 }
