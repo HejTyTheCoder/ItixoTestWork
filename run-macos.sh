@@ -1,4 +1,4 @@
 #!/bin/bash
-cd publish/osx-x64
-chmod +x ItixoTestWork
-./ItixoTestWork
+cd "$(dirname "$0")"
+chmod +x publish/osx-x64/ItixoTestWork
+./publish/osx-x64/ItixoTestWork

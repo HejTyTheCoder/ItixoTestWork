@@ -1,3 +1,3 @@
 @echo off
-cd publish\win-x64
-start ItixoTestWork.exe
+cd /d "%~dp0"
+publish\win-x64\ItixoTestWork.exe
