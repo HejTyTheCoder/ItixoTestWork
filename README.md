@@ -15,3 +15,7 @@ Na Linuxu a macOS je po prvním stažení repozitáře potřeba nastavit spustit
 Poté lze skripty spustit přímo příkazem `./run-linux.sh` nebo `./run-macos.sh`.
 
 Pro běh není nutné mít nainstalovaný .NET runtime — vše potřebné je součástí publikovaných verzí.
+
+## Informace o uložených datech a logování
+Aplikace automaticky v kořenovém adresáři projektu vytváří složku db/, ve které se nachází SQLite databáze se staženými daty.
+Stejně tak je vytvořena i složka logs/ pro logovací soubory s podrobným záznamem běhu aplikace.
