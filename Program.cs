@@ -44,7 +44,9 @@ class Program
                 case ConsoleKey.Q:
                     _logger.Log("Manual shutdown requested.");
                     _timer.Stop();
-                    await WeatherUpdate();
+
+                    await WeatherUpdate(isFinal: true);
+                    _logger.Log("Shutting down...");
                     await Task.Delay(3000);
                     Environment.Exit(0);
                     break;
@@ -64,7 +66,7 @@ class Program
         }
     }
 
-    private static async Task WeatherUpdate()
+    private static async Task WeatherUpdate(bool isFinal = false)
     {
         _logger.Log("Starting weather data update...");
 
@@ -91,6 +93,13 @@ class Program
             _logger.Log($"ERROR: {ex.Message}");
         }
 
-        _logger.Log("Next update in 1 hour.");
+        if (isFinal)
+        {
+            _logger.Log("Final record saved before shutdown.");
+        }
+        else
+        {
+            _logger.Log("Next update in 1 hour.");
+        }
     }
 }
