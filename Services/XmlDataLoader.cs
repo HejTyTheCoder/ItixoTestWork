@@ -10,7 +10,7 @@ public class XmlDataLoader
 {
     private readonly HttpClient _client;
     private readonly string _url;
-    
+
     /// <summary>
     /// Initializes the loader with a target URL.
     /// </summary>
@@ -20,7 +20,7 @@ public class XmlDataLoader
         _client = new HttpClient();
         _url = url;
     }
-    
+
     /// <summary>
     /// Runs an async HTTP GET request to load the XML data.
     /// </summary>
