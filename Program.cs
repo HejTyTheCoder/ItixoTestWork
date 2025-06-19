@@ -57,10 +57,7 @@ class Program
                     break;
 
                 case ConsoleKey.H:
-                    Console.WriteLine("\nAvailable commands:");
-                    Console.WriteLine("  [Q] - Quit and save one last weather record");
-                    Console.WriteLine("  [L] - Show latest weather record (JSON)");
-                    Console.WriteLine("  [H] - Show this help menu\n");
+                    ShowHelp();
                     break;
             }
         }
@@ -101,5 +98,15 @@ class Program
         {
             _logger.Log("Next update in 1 hour.");
         }
+    }
+
+    private static void ShowHelp()
+    {
+        Console.WriteLine();
+        Console.WriteLine("Available commands:");
+        Console.WriteLine("  [Q] - Quit and save one last weather record");
+        Console.WriteLine("  [L] - Show latest weather record (JSON)");
+        Console.WriteLine("  [H] - Show this help menu");
+        Console.WriteLine();
     }
 }
