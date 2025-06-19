@@ -24,7 +24,7 @@ class Program
             _logger.Log("Running in debug mode...");
         }
 
-        _timer = new System.Timers.Timer(TimeSpan.FromSeconds(10).TotalMilliseconds); // Testing time
+        _timer = new System.Timers.Timer(TimeSpan.FromHours(1).TotalMilliseconds);
         _timer.Elapsed += async (s, e) => await WeatherUpdate();
         _timer.AutoReset = true;
 
