@@ -2,11 +2,18 @@ using Microsoft.Data.Sqlite;
 
 namespace ItixoTestWork.Data;
 
+/// <summary>
+/// Manages SQLite database connection and weather data work.
+/// </summary>
 public class DatabaseManager
 {
     private readonly string _connectionString;
     private readonly string _dbPath;
 
+    /// <summary>
+    /// Initializes database manager and sets up the database connection.
+    /// </summary>
+    /// <param name="dbPath">Path to the SQLite database file.</param>
     public DatabaseManager(string dbPath)
     {
         _connectionString = $"Data Source={dbPath}";
@@ -15,6 +22,10 @@ public class DatabaseManager
         Init();
     }
 
+    /// <summary>
+    /// Ensures the database file and required table existance.
+    /// Creates database directory if missing.
+    /// </summary>
     private void Init()
     {
         string? dbDirectory = Path.GetDirectoryName(_dbPath);
@@ -41,6 +52,9 @@ public class DatabaseManager
         command.ExecuteNonQuery();
     }
 
+    /// <summary>
+    /// Saves JSON string with current timestamp into database.
+    /// </summary>
     public void SaveJson(string json)
     {
         using var connection = new SqliteConnection(_connectionString);
@@ -60,11 +74,18 @@ public class DatabaseManager
         command.ExecuteNonQuery();
     }
 
+    /// <summary>
+    /// Saves a default message indicating data was unavailable.
+    /// </summary>
     public void SaveUnavailableMessage()
     {
         SaveJson("Weather station was not available.");
     }
 
+    /// <summary>
+    /// Takes the latest JSON entry from the database.
+    /// </summary>
+    /// <returns>Last stored JSON string or a fallback message.</returns>
     public string GetLastJson()
     {
         using var connection = new SqliteConnection(_connectionString);

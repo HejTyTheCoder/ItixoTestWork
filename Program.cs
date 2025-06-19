@@ -4,6 +4,10 @@ using ItixoTestWork.Data;
 
 namespace ItixoTestWork;
 
+/// <summary>
+/// Main application entry point. Handles configuration loading,
+/// timer-based updates, and keyboard shortcut interactions.
+/// </summary>
 class Program
 {
     private static Logger _logger = new Logger("logs");
@@ -11,6 +15,9 @@ class Program
     private static DatabaseManager? _dbManager;
     private static XmlDataLoader? _loader;
 
+    /// <summary>
+    /// Starts the application and enters the input listening loop.
+    /// </summary>
     static async Task Main()
     {
         var config = new ConfigurationBuilder()
@@ -48,7 +55,7 @@ class Program
 
                     await WeatherUpdate(isFinal: true);
                     _logger.Log("Shutting down...");
-                    await Task.Delay(3000);
+                    await Task.Delay(3000); // Additional time to read the final logs
                     Environment.Exit(0);
                     break;
 
@@ -64,6 +71,10 @@ class Program
         }
     }
 
+    /// <summary>
+    /// Downloads, converts, and saves the weather data.
+    /// </summary>
+    /// <param name="isFinal">Set to true to log final update message.</param>
     private static async Task WeatherUpdate(bool isFinal = false)
     {
         _logger.Log("Starting weather data update...");
@@ -101,6 +112,9 @@ class Program
         }
     }
 
+    /// <summary>
+    /// Prints help menu to the console.
+    /// </summary>
     private static void ShowHelp()
     {
         Console.WriteLine();
