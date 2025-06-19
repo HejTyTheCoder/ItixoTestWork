@@ -5,6 +5,7 @@ namespace ItixoTestWork;
 
 class Program
 {
+    private static Logger _logger = new Logger("logs");
     private static System.Timers.Timer? _timer;
     private static DatabaseManager? _dbManager;
     private static XmlDataLoader? _loader;
@@ -20,7 +21,7 @@ class Program
 
         if (environment == "Development")
         {
-            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Running in debug mode");
+            _logger.Log("Running in debug mode...");
         }
 
         _timer = new System.Timers.Timer(TimeSpan.FromSeconds(10).TotalMilliseconds); // Testing time
@@ -41,7 +42,7 @@ class Program
             switch (key)
             {
                 case ConsoleKey.Q:
-                    Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Manual shutdown requested.");
+                    _logger.Log("Manual shutdown requested.");
                     _timer.Stop();
                     await WeatherUpdate();
                     await Task.Delay(3000);
@@ -49,7 +50,7 @@ class Program
                     break;
 
                 case ConsoleKey.L:
-                    Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Showing last weather record in database...");
+                    _logger.Log("Showing last weather record in database...");
                     Console.WriteLine(_dbManager.GetLastJson());
                     break;
 
@@ -65,7 +66,7 @@ class Program
 
     private static async Task WeatherUpdate()
     {
-        Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Starting weather data update...");
+        _logger.Log("Starting weather data update...");
 
         try
         {
@@ -77,19 +78,19 @@ class Program
 
                 _dbManager!.SaveJson(json);
 
-                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Data update completed.");
+                _logger.Log("Data update completed.");
             }
             else
             {
-                Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] No XML returned.");
+                _logger.Log("No XML returned.");
                 _dbManager!.SaveUnavailableMessage();
             }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] ERROR: {ex.Message}");
+            _logger.Log($"ERROR: {ex.Message}");
         }
 
-        Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] Next update in 1 hour.");
+        _logger.Log("Next update in 1 hour.");
     }
 }
