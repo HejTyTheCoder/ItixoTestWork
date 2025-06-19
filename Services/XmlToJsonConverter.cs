@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using System.Xml;
 
-namespace ItixoTestWork;
+namespace ItixoTestWork.Services;
 
 public static class XmlToJsonConverter
 {

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
-using ItixoTestWork;
+using ItixoTestWork.Services;
+using ItixoTestWork.Data;
 
 namespace ItixoTestWork;
 

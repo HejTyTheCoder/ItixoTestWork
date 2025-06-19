@@ -1,6 +1,6 @@
 using Microsoft.Data.Sqlite;
 
-namespace ItixoTestWork;
+namespace ItixoTestWork.Data;
 
 public class DatabaseManager
 {

@@ -1,4 +1,4 @@
-namespace ItixoTestWork;
+namespace ItixoTestWork.Services;
 
 public class Logger
 {
