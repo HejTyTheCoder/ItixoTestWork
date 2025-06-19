@@ -16,6 +16,12 @@ Poté lze skripty spustit přímo příkazem `./run-linux.sh` nebo `./run-macos.
 
 Pro běh není nutné mít nainstalovaný .NET runtime — vše potřebné je součástí publikovaných verzí.
 
+## Ovládání
+Aplikace podporuje ovládání pomocí klávesových zkratek:
+- **Q** — uloží poslední záznam a uzavře aplikaci
+- **L** — výpis dat z meteostanice z posledního uloženého záznamu
+- **H** — zobrazení nápovědy ke klávesovým zkratkám
+
 ## Informace o uložených datech a logování
 Aplikace automaticky v kořenovém adresáři projektu vytváří složku db/, ve které se nachází SQLite databáze se staženými daty.
 Stejně tak je vytvořena i složka logs/ pro logovací soubory s podrobným záznamem běhu aplikace.
