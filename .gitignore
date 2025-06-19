@@ -1,12 +1,8 @@
 # Build results
-[Dd]ebug/
-[Rr]elease/
-x64/
-x86/
-build/
-bld/
-[Bb]in/
-[Oo]bj/
+Debug/
+Release/
+bin/
+obj/
 
 # User-specific files
 *.user
@@ -23,28 +19,5 @@ db/*.sqlite
 # VS Code
 .vscode/
 
-# Dotnet CLI
-*.dbmdl
-*.dotCover
-project.lock.json
-project.fragment.lock.json
-artifacts/
-
-# NuGet packages
-*.nupkg
-*.snupkg
-*.nuspec
-packages/
-*.psmdcp
-*.symbols.nupkg
-
 # Logs
 *.log
-
-# Others
-*.DS_Store
-Thumbs.db
-
-# Windows image file caches
-ehthumbs.db
-Icon?
